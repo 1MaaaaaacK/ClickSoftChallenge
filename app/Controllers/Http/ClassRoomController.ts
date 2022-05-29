@@ -1,7 +1,6 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Database from '@ioc:Adonis/Lucid/Database'
 import ClassRoom from 'App/Models/ClassRoom'
-import ClassRoomRelation from 'App/Models/ClassRoomRelation'
 import Teacher from 'App/Models/Teacher'
 
 export default class ClassRoomController {

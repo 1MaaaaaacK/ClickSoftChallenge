@@ -75,28 +75,6 @@ export default class ClassRoomRelationController {
 
     return response.json({ data: classes })
   }
-  /* public async update({ request, response }: HttpContextContract) {
-    const params = request.params().id
-    const body = request.body()
-    const classes = await ClassRoom.findOrFail(params)
-
-    const bodyFind = Object.keys(body).filter((m) => {
-      if (Teacher.$columnsDefinitions.has(m)) return m
-    })
-
-    if (bodyFind.length === 0) {
-      return response.status(404).json({
-        message: 'Você deve fornecer ao menos uma informação válida para editar o professor',
-      })
-    }
-    bodyFind.map((m) => {
-      if (teachers[m] && m !== 'id') teachers[m] = body[m]
-    })
-
-    await classes.save()
-
-    return response.json({ message: 'Estudante editado com sucesso', data: classes })
-  } */
   public async removeStudent({ params, response }: HttpContextContract) {
     const classRoomsRelation = await ClassRoomRelation.query()
       .where('student_id', params.student_id)
